@@ -1,0 +1,70 @@
+body header,
+body footer {
+  width: 100vw;
+  padding: 26px;
+  margin-bottom: 73px;
+  background-color: $color-header-footer;
+}
+
+body header .container-header,
+body footer .container-footer {
+  margin: 0 auto;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+body header .container-header .logo,
+body footer .container-footer .logo {
+  font-family: $font-primary;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.16px;
+  text-transform: uppercase;
+  align-self: flex-start;
+
+  @media screen and (min-width: 768px) {
+    align-self: auto;
+  }
+
+  span {
+    color: $color-accent;
+  }
+}
+
+body header .container-header ul,
+body footer .container-footer ul {
+  max-width: 375px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.79px;
+  letter-spacing: 0.03em;
+
+  li > a:hover {
+    color: lighten($color-text, 20%);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+body footer .container-footer .right-protected {
+  color: $color-text-muted;
+  white-space: nowrap;
+  font-weight: 300;
+}

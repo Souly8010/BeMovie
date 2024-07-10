@@ -1,0 +1,29 @@
+button {
+  background-color: $color-accent;
+  color: $color-text;
+  border-radius: 5px;
+  font-family: $font-secondary;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.94px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
+}
+
+.close {
+  color: $color-text-muted;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+    text-decoration: none;
+  }
+}

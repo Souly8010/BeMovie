@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BeMovies</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+  <header>
+    <div class="container-header">
+      <div class="logo">
+        <p><span>Be</span>Movies</p>
+      </div>
+      <ul>
+        <li><a href="#searchMovie">Search</a></li>
+        <li><a href="#latest-releases">Latest</a></li>
+        <li><a href="#movies-by-genre">Genres</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a id="signInOpenModal">SignIn</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Sign In Modal -->
+  <dialog id="signForm" class="signForm dialogModal">
+    <div class="sign-card">
+      <div class="cross"><img src="./img/cross.svg" alt="Close"></div>
+      <div class="btns">
+        <button class="SignupBtn" id="register">Signup</button>
+        <button class="LoginBtn active-red">Login</button>
+      </div>
+      <form id="loginForm" class="loginForm">
+        <input type="text" placeholder="username" id="usernameLogin">
+        <input type="password" placeholder="password" id="passwordLogin">
+        <div class="remember-me">
+          <input type="checkbox" id="rememberMeLogin">
+          <label for="rememberMeLogin">Remember me</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <a class="forgot-password">I forgot my password</a>
+      <div class="not-member">
+        <p>Not a member yet?</p>
+        <a>Sign up</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Movie Modal -->
+  <div id="movieModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="poster-container" id="poster-modal">
+        <img id="poster-modal-img" src="" alt="Movie Poster">
+      </div>
+      <div class="text-container">
+        <h2 id="title-modal">Movie Title</h2>
+        <p class="date" id="date-modal">Release Date</p>
+        <div class="rate-container">
+          <div class="star"><img src="./img/star.svg" alt="star"></div>
+          <p class="rate" id="rate-modal">Rating</p>
+        </div>
+        <p class="genres" id="genres-modal">Genres</p>
+        <p class="text-description" id="overview-modal">Movie Overview</p>
+        <div class="casting">
+          <p class="casting-list" id="cast-modal"><span>Cast:</span> Actor Names</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Search Section -->
+    <form class="searchMovie" id="searchMovie">
+      <input type="text" class="searchMovieInput" id="searchMovieInput">
+      <button class="searchMovieBtn" id="searchMovieBtn"><img src="./img/whiteArrow.svg" alt=""></button>
+    </form>
+    
+    <!-- Results Section -->
+    <div class="swipers-container result-container">
+      <h2 id="title-results">Results for XXX</h2>
+      <div class="swiper swiper-result">
+        <div class="swiper-wrapper" id="wrapper-result">
+          <!-- Les cartes de films seront ajoutées dynamiquement ici -->
+        </div>
+        <div class="swiper-button-prev swiper-result-prev"></div>
+        <div class="swiper-button-next swiper-result-next"></div>
+      </div>    </div>
+
+    <!-- Latest Releases Section -->
+    <div id="latest-releases" class="swipers-container latest-releases-container">
+      <h2>Latest releases</h2>
+      <div class="swiper swiper-latest-releases">
+        <div class="swiper-wrapper" id="wrapper-latest-release"></div>
+        <div class="swiper-button-prev swiper-latest-prev"></div>
+        <div class="swiper-button-next swiper-latest-next"></div>
+      </div>
+    </div>
+
+    <!-- Movies by Genre Section -->
+    <div class="movies-by-genre-titles">
+      <h2 class="main-genre-title">Movies by genre</h2>
+      <div class="genres-name" id="genres-name">
+        <h2 id="Comedy" class="genreBtn active">Comedy</h2>
+        <h2 id="Drama" class="genreBtn">Drama</h2>
+        <h2 id="Action" class="genreBtn">Action</h2>
+        <h2 id="Romance" class="genreBtn">Romance</h2>
+        <h2 id="Fantasy" class="genreBtn">Fantasy</h2>
+        <h2 id="Animation" class="genreBtn">Animation</h2>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div id="movies-by-genre" class="swipers-container movies-by-genre-container">
+      <h2 id="genre-title">Comedy</h2>
+      <div class="swiper swiper-movies-by-genre">
+        <div class="swiper-wrapper" id="wrapper-movies-by-genre"></div>
+        <div class="swiper-button-prev swiper-genre-prev"></div>
+        <div class="swiper-button-next swiper-genre-next"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container-footer">
+      <div class="logo">
+        <p><span>Be</span>Movies</p>
+      </div>
+      <ul>
+        <li><a href="#searchMovie">Search</a></li>
+        <li><a href="#latest-releases">Latest</a></li>
+        <li><a href="#movies-by-genre">Genres</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">SignIn</a></li>
+      </ul>
+      <div class="right-protected">
+        <p>@2023 - All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="app.js" type="module"></script>
+  <script src="./js/apiFunctions.js" type="module"></script>
+</body>
+</html>
